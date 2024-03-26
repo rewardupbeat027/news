@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<button
+type="submit">Login</button>
+</form>
+
+{% if user.is_authenticated %}
+    <p>Hi, {{ user.username }}!</p>
+<a href="http://127.0.0.1:8000/"> Главная </a>
+{% endif %}
+</body>
+</html>
