@@ -11,7 +11,7 @@ class SuperModelForm(ModelForm):
     class Meta:
         model = News
         fields = "__all__"
-
+        exclude = ['slug']
 
 
 class UserForm(UserCreationForm):
